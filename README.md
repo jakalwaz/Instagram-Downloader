@@ -228,3 +228,11 @@ These features was deprecated for some reason.
 ## Here is Demo
 
 [Demo v6.0.0](https://github.com/user-attachments/assets/2be00cbf-58bb-4453-aa47-51b67d7967f0)
+
+## Safari (macOS)
+
+1. Build: `xcodebuild -project "safari/Instagram Downloader/Instagram Downloader.xcodeproj" -scheme "Instagram Downloader" -configuration Release -derivedDataPath build CODE_SIGN_IDENTITY="-" build`
+2. In Safari, enable Settings → Advanced → "Show features for web developers", then Develop → "Allow Unsigned Extensions" (resets each Safari restart).
+3. Run `build/Build/Products/Release/Instagram Downloader.app` once, then enable the extension in Safari Settings → Extensions.
+
+The Xcode project reads the extension files (`manifest.json`, `src/`, `lib/`, `icons/`) directly from the repo root.

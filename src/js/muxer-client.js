@@ -52,7 +52,8 @@ async function muxDashMedia(dash, onProgress) {
                 videoUrl: dash.videoUrl,
                 audioUrl: dash.audioUrl,
             },
-            new URL(dashMuxerFrame.src).origin,
+            // Safari reports 'null' as the origin of safari-web-extension:// URLs
+            new URL(dashMuxerFrame.src).origin === 'null' ? '*' : new URL(dashMuxerFrame.src).origin,
         );
     });
 }

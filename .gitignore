@@ -2,3 +2,6 @@
 !manifest.json
 !.prettierrc.json
 release-note.md
+safari/**/build/
+safari/**/xcuserdata/
+.DS_Store

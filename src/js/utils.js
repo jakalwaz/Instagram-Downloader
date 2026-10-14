@@ -3,7 +3,8 @@ function saveFile(blob, fileName) {
     a.download = fileName;
     a.href = URL.createObjectURL(blob);
     a.click();
-    URL.revokeObjectURL(a.href);
+    // Safari cancels the download if the blob URL is revoked synchronously after click()
+    setTimeout(() => URL.revokeObjectURL(a.href), 60000);
 }
 
 function setButtonProgress(button, percent) {
